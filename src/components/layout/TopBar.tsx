@@ -3,13 +3,14 @@
 import { Phone, Mail, MapPin, Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useState } from 'react'
 
 const navItems = [
-  { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Products', href: '#products' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Home', href: '/' },
+  { name: 'About', href: '/about' },
+  { name: 'Products', href: '/products' },
+  { name: 'Contact', href: '/contact' },
 ]
 
 export default function TopBar() {
@@ -17,19 +18,50 @@ export default function TopBar() {
   
   return (
     <>
-      {/* Announcement Bar */}
+      {/* Announcement Bar - Scrolling */}
       <motion.div
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="bg-[#4a5568] text-white py-2 text-center text-xs sm:text-sm"
+        className="bg-[#003867] text-white py-2.5 overflow-hidden relative"
       >
-        <div className="container mx-auto px-4">
-          <p className="font-medium">
-            We are here, ready to support{' '}
-            <span className="font-bold">safe sterilization with certified supplies</span>{' '}
-            delivered right to your facility.
-          </p>
+        <div className="flex animate-marquee whitespace-nowrap">
+          {/* First Set */}
+          <div className="flex items-center space-x-8 px-8">
+            <span className="font-bold">🏥 Transforming Healthcare Since 1990 | 35+ Years of Excellence</span>
+            <span>•</span>
+            <span>🏆 ISO 13485 Certified • DRAP Approved • CE Marked • International Quality Standards</span>
+            <span>•</span>
+            <span className="font-bold">💙 Caring for Life - Your Partner in Saving Lives</span>
+            <span>•</span>
+            <span>🔬 Complete Medical Solutions: Advanced Monitoring Systems • ICU/OT Equipment • Premium Furniture • Surgical Tools • CSSD • Medical Gases</span>
+            <span>•</span>
+            <span className="font-bold">📞 24/7 Expert Support & Emergency Response: +92-42-36315179</span>
+            <span>•</span>
+            <span>⭐ Proudly Serving 500+ Leading Hospitals | Armed Forces • CMH • DHQs • Private Healthcare</span>
+            <span>•</span>
+            <span className="font-bold">✓ Nationwide Installation • Training • Maintenance • Spare Parts Availability</span>
+            <span>•</span>
+            <span>🚀 Free Site Surveys • Competitive Pricing • Flexible Payment Terms</span>
+          </div>
+          {/* Duplicate Set for Seamless Loop */}
+          <div className="flex items-center space-x-8 px-8">
+            <span className="font-bold">🏥 Transforming Healthcare Since 1990 | 35+ Years of Excellence</span>
+            <span>•</span>
+            <span>🏆 ISO 13485 Certified • DRAP Approved • CE Marked • International Quality Standards</span>
+            <span>•</span>
+            <span className="font-bold">💙 Caring for Life - Your Partner in Saving Lives</span>
+            <span>•</span>
+            <span>🔬 Complete Medical Solutions: Advanced Monitoring Systems • ICU/OT Equipment • Premium Furniture • Surgical Tools • CSSD • Medical Gases</span>
+            <span>•</span>
+            <span className="font-bold">📞 24/7 Expert Support & Emergency Response: +92-42-36315179</span>
+            <span>•</span>
+            <span>⭐ Proudly Serving 500+ Leading Hospitals | Armed Forces • CMH • DHQs • Private Healthcare</span>
+            <span>•</span>
+            <span className="font-bold">✓ Nationwide Installation • Training • Maintenance • Spare Parts Availability</span>
+            <span>•</span>
+            <span>🚀 Free Site Surveys • Competitive Pricing • Flexible Payment Terms</span>
+          </div>
         </div>
       </motion.div>
 
@@ -79,8 +111,8 @@ export default function TopBar() {
                 </div>
                 <div>
                   <p className="text-xs text-gray-500 font-medium">Email Address</p>
-                  <a href="mailto:info@medapinternational.com" className="text-sm font-semibold text-gray-800 hover:text-[#2db8c7] transition-colors">
-                    info@medapinternational.com
+                  <a href="mailto:medap.international@gmail.com" className="text-sm font-semibold text-gray-800 hover:text-[#2db8c7] transition-colors">
+                    medap.international@gmail.com
                   </a>
                 </div>
               </div>
@@ -92,8 +124,8 @@ export default function TopBar() {
                 </div>
                 <div>
                   <p className="text-xs text-gray-500 font-medium">Phone Number</p>
-                  <a href="tel:+923008442270" className="text-sm font-semibold text-gray-800 hover:text-[#2db8c7] transition-colors">
-                    +92-300-8442270
+                  <a href="tel:+924236315179" className="text-sm font-semibold text-gray-800 hover:text-[#2db8c7] transition-colors">
+                    +92-42-36315179
                   </a>
                 </div>
               </div>
@@ -105,7 +137,7 @@ export default function TopBar() {
                 </div>
                 <div>
                   <p className="text-xs text-gray-500 font-medium">Our Location</p>
-                  <p className="text-sm font-semibold text-gray-800">Lateef Manzal 1st Floor, Lahore</p>
+                  <p className="text-sm font-semibold text-gray-800">Sharf Mansion, Lahore</p>
                 </div>
               </div>
             </div>
@@ -124,7 +156,7 @@ export default function TopBar() {
             >
               <div className="container mx-auto px-4 py-4 space-y-3">
                 {navItems.map((item, index) => (
-                  <a key={item.name} href={item.href}>
+                  <Link key={item.name} href={item.href}>
                     <motion.div
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -134,9 +166,9 @@ export default function TopBar() {
                     >
                       {item.name}
                     </motion.div>
-                  </a>
+                  </Link>
                 ))}
-                <a href="#contact">
+                <Link href="/contact">
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -147,7 +179,7 @@ export default function TopBar() {
                   >
                     Get Quote
                   </motion.div>
-                </a>
+                </Link>
               </div>
             </motion.div>
           )}

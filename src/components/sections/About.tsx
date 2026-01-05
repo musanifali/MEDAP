@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import { Award, Users, Globe, CheckCircle } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
 
@@ -28,10 +29,10 @@ const AnimatedNumber = ({ value, duration = 2, inView }: { value: string, durati
 }
 
 const stats = [
-  { number: "15+", label: "Years Experience", icon: Award },
-  { number: "500+", label: "Hospitals Served", icon: Users },
-  { number: "50+", label: "Countries Worldwide", icon: Globe },
-  { number: "1M+", label: "Patients Benefited", icon: CheckCircle }
+  { number: "35+", label: "Years Experience", icon: Award },
+  { number: "500+", label: "Healthcare Facilities", icon: Users },
+  { number: "100+", label: "Major Clients", icon: Globe },
+  { number: "1990", label: "Established", icon: CheckCircle }
 ]
 
 export default function About() {
@@ -56,9 +57,9 @@ export default function About() {
   }, [])
 
   return (
-    <section id="about" className="py-24 bg-white">
+    <section id="about" className="py-16 sm:py-20 lg:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -71,27 +72,29 @@ export default function About() {
               <span>About MEDAP International</span>
             </div>
             
-            <h2 className="text-4xl lg:text-5xl font-bold text-[#003867] mb-6">
-              Pioneering Healthcare
-              <span className="block text-[#2db8c7]">Innovation Since 2010</span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#003867] mb-4 sm:mb-6">
+              Leading Healthcare Provider
+              <span className="block text-[#2db8c7]">Since 1990</span>
             </h2>
             
-            <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              We're more than just a furniture manufacturer. We're your partner in creating healing environments 
-              that enhance patient outcomes and support healthcare professionals in their vital work.
+            <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-6 sm:mb-8">
+              MEDAP International is a team of well-linked professionals and one of Pakistan's leading suppliers 
+              and service providers of Electro Medical Equipment, Hospital Furniture, Surgical Instruments, and Medical 
+              Gases. We work with "Caring for Life" philosophy to serve healthcare institutions across Pakistan.
             </p>
 
-            <motion.a
-              href="#contact"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-3 bg-gradient-to-r from-[#2db8c7] to-[#25a5b3] text-white px-8 py-4 rounded-2xl font-semibold shadow-lg hover:shadow-[#2db8c7]/25 transition-all duration-300"
-            >
-              Learn More About Us
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </motion.a>
+            <Link href="/about">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-[#2db8c7] to-[#25a5b3] text-white px-8 py-4 rounded-2xl font-semibold shadow-lg hover:shadow-[#2db8c7]/25 transition-all duration-300"
+              >
+                Learn More About Us
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </motion.button>
+            </Link>
           </motion.div>
 
           {/* Right Stats */}
@@ -101,7 +104,7 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="grid grid-cols-2 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6"
           >
             {stats.map((stat, index) => (
               <motion.div
@@ -111,15 +114,15 @@ export default function About() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5, scale: 1.05 }}
-                className="text-center bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+                className="text-center bg-gradient-to-br from-gray-50 to-white rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-[#2db8c7] to-[#25a5b3] rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <stat.icon className="text-white" size={28} />
+                <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-r from-[#2db8c7] to-[#25a5b3] rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                  <stat.icon className="text-white" size={20} />
                 </div>
-                <div className="text-4xl font-bold text-[#003867] mb-2">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#003867] mb-1 sm:mb-2">
                   <AnimatedNumber value={stat.number} duration={2.5} inView={inView} />
                 </div>
-                <div className="text-gray-600 font-medium">{stat.label}</div>
+                <div className="text-sm sm:text-base text-gray-600 font-medium">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>

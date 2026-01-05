@@ -68,81 +68,139 @@ export default function Hero() {
       {/* Static Content */}
       <div className="relative z-10 h-full">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full">
-          <div className="flex items-center h-full py-16 sm:py-20 md:py-24 lg:py-28">
+          <div className="flex items-center h-full py-20 sm:py-24 md:py-28 lg:py-32 xl:py-36">
             <div className="max-w-5xl">
+              {/* Badge */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="inline-flex items-center gap-2 bg-white/95 backdrop-blur-sm border-2 border-[#2db8c7]/20 rounded-full px-5 py-2.5 mb-6 sm:mb-8 shadow-lg"
+              >
+                <div className="w-2 h-2 bg-[#2db8c7] rounded-full animate-pulse"></div>
+                <span className="text-sm font-bold text-[#003867]">Trusted Since 1990</span>
+                <div className="w-px h-4 bg-gray-300"></div>
+                <span className="text-sm font-semibold text-[#2db8c7]">35+ Years of Excellence</span>
+              </motion.div>
              
-              {/* Main Headline */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-[#003867] mb-4 sm:mb-6 leading-[1.1] tracking-tight">
-                Premium Hospital{' '}
-                <span className="text-[#2db8c7] block mt-1 sm:mt-2">
-                  Furniture Solutions
+              {/* Main Headline - Enhanced */}
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-8 sm:mb-10 leading-[1.05] tracking-tight"
+              >
+                <span className="text-[#003867] block">
+                  Complete Healthcare
                 </span>
-              </h1>
+                <span className="relative inline-block mt-2">
+                  <span className="relative z-10 bg-gradient-to-r from-[#2db8c7] via-[#25a5b3] to-[#2db8c7] bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
+                    Solutions Provider
+                  </span>
+                  {/* Underline Effect */}
+                  <motion.div
+                    initial={{ width: 0 }}
+                    animate={{ width: '100%' }}
+                    transition={{ duration: 1, delay: 1 }}
+                    className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-[#2db8c7] to-[#25a5b3] rounded-full"
+                  ></motion.div>
+                </span>
+              </motion.h1>
 
-              {/* Description */}
-              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-[#003867]/80 mb-4 sm:mb-6 leading-relaxed font-light max-w-3xl">
-                Modern, durable, and ergonomic designs for better patient care
-              </p>
+              {/* Description - Enhanced */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="text-xl sm:text-2xl md:text-3xl text-[#003867]/90 mb-8 sm:mb-10 leading-relaxed font-medium max-w-4xl"
+              >
+                <span className="font-bold text-[#003867]">Electro Medical Equipment</span> • 
+                <span className="font-bold text-[#003867]"> Hospital Furniture</span> • 
+                <span className="font-bold text-[#003867]"> Surgical Instruments</span> • 
+                <span className="font-bold text-[#003867]"> Medical Gases</span>
+              </motion.p>
 
-              {/* Tagline with Icon */}
-              <div className="flex items-center gap-2 sm:gap-3 mb-8 sm:mb-10 md:mb-12">
-                <div className="w-8 sm:w-10 md:w-12 h-0.5 bg-[#2db8c7]"></div>
-                <p className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-[#2db8c7] tracking-[0.15em] sm:tracking-[0.2em] uppercase">
-                  Caring For Life
-                </p>
-              </div>
+              {/* Tagline with Icon - Enhanced */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                className="flex items-center gap-3 mb-12 sm:mb-14"
+              >
+                <div className="flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-md border border-[#2db8c7]/20">
+                  <svg className="w-5 h-5 text-[#2db8c7]" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <span className="text-base font-bold text-[#003867] tracking-wide uppercase">
+                    Caring for Life
+                  </span>
+                </div>
+              </motion.div>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 md:gap-5">
-                <a
-                  href="#products"
-                  className="group relative px-6 sm:px-8 md:px-10 py-3.5 sm:py-4 md:py-5 bg-[#2db8c7] text-white text-sm sm:text-base font-bold rounded-lg sm:rounded-xl shadow-2xl shadow-[#2db8c7]/30 transition-all duration-300 hover:shadow-[#2db8c7]/50 hover:-translate-y-1 overflow-hidden text-center"
+              {/* CTA Buttons - Enhanced */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1 }}
+                className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-5"
+              >
+                <motion.a
+                  href="/products"
+                  whileHover={{ scale: 1.05, y: -3 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="group relative px-8 sm:px-10 md:px-12 py-4 sm:py-5 bg-gradient-to-r from-[#2db8c7] to-[#25a5b3] text-white text-base sm:text-lg font-bold rounded-2xl shadow-2xl shadow-[#2db8c7]/40 transition-all duration-300 overflow-hidden text-center"
                 >
-                  <span className="relative z-10 flex items-center gap-3">
+                  {/* Animated Background */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#25a5b3] to-[#2db8c7] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  
+                  {/* Shine Effect */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                    animate={{ x: ['-100%', '200%'] }}
+                    transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
+                  ></motion.div>
+                  
+                  <span className="relative z-10 flex items-center justify-center gap-3">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg>
                     Explore Products
                     <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#2db8c7] to-[#25a5b3] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </a>
+                </motion.a>
 
-                <a
-                  href="#contact"
-                  className="group px-6 sm:px-8 md:px-10 py-3.5 sm:py-4 md:py-5 bg-white text-[#003867] text-sm sm:text-base font-bold rounded-lg sm:rounded-xl border-2 sm:border-3 border-[#003867] transition-all duration-300 hover:bg-[#003867] hover:text-white hover:-translate-y-1 shadow-xl text-center"
+                <motion.a
+                  href="/contact"
+                  whileHover={{ scale: 1.05, y: -3 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="group relative px-8 sm:px-10 md:px-12 py-4 sm:py-5 bg-white/95 backdrop-blur-sm text-[#003867] text-base sm:text-lg font-bold rounded-2xl border-3 border-[#003867] transition-all duration-300 hover:bg-[#003867] hover:text-white shadow-xl hover:shadow-2xl text-center overflow-hidden"
                 >
-                  <span className="flex items-center justify-center gap-2 sm:gap-3">
+                  {/* Hover Background */}
+                  <div className="absolute inset-0 bg-[#003867] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                  
+                  <span className="relative z-10 flex items-center justify-center gap-3">
+                    <svg className="w-6 h-6 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                    </svg>
                     Contact Us
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </span>
-                </a>
-              </div>
+                </motion.a>
+              </motion.div>
 
-              {/* Trust Indicators */}
-              <div className="mt-8 sm:mt-10 md:mt-12 pt-6 sm:pt-8 border-t-2 border-[#2db8c7]/20">
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 text-[#003867]/70">
-                  <div className="flex items-center gap-2">
-                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#2db8c7] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                    <span className="font-semibold text-sm sm:text-base">ISO Certified</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#2db8c7] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                    </svg>
-                    <span className="font-semibold text-sm sm:text-base">Quality Assured</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#2db8c7] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <span className="font-semibold text-sm sm:text-base">Global Delivery</span>
-                  </div>
-                </div>
-              </div>
+              {/* Trust Indicators - Enhanced */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.2 }}
+                className="mt-12 sm:mt-14 md:mt-16"
+              >
+                
+              </motion.div>
             </div>
           </div>
         </div>

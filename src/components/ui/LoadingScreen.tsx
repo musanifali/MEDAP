@@ -34,7 +34,7 @@ export default function LoadingScreen() {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="absolute top-20 right-20 w-32 h-32 bg-[#2db8c7]/10 rounded-full blur-xl"
+          className="absolute top-10 sm:top-20 right-4 sm:right-20 w-16 sm:w-24 lg:w-32 h-16 sm:h-24 lg:h-32 bg-[#2db8c7]/10 rounded-full blur-xl"
         />
         
         <motion.div
@@ -48,7 +48,7 @@ export default function LoadingScreen() {
             ease: "easeInOut",
             delay: 2
           }}
-          className="absolute bottom-20 left-20 w-24 h-24 bg-[#003867]/10 rounded-full blur-xl"
+          className="absolute bottom-10 sm:bottom-20 left-4 sm:left-20 w-12 sm:w-16 lg:w-24 h-12 sm:h-16 lg:h-24 bg-[#003867]/10 rounded-full blur-xl"
         />
 
         {/* Logo with Elegant Animation */}
@@ -62,7 +62,7 @@ export default function LoadingScreen() {
             duration: 1,
             ease: "easeOut"
           }}
-          className="mb-12"
+          className="mb-8 sm:mb-12"
         >
           <motion.div
             animate={{
@@ -81,7 +81,7 @@ export default function LoadingScreen() {
               width={250}
               height={80}
               priority
-              className="h-20 w-auto object-contain"
+              className="h-16 sm:h-20 w-auto object-contain"
             />
             
             {/* Subtle Glow Effect */}
@@ -124,7 +124,7 @@ export default function LoadingScreen() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          className="mt-8 text-[#003867] text-lg font-medium tracking-wide"
+          className="mt-6 sm:mt-8 text-[#003867] text-base sm:text-lg font-medium tracking-wide px-4 text-center"
         >
           <motion.span
             animate={{

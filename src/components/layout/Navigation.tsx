@@ -8,10 +8,11 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const navItems = [
-  { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Products', href: '#products' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Home', href: '/' },
+  { name: 'About', href: '/about' },
+  { name: 'Products', href: '/products' },
+  { name: 'Certifications', href: '/certifications' },
+  { name: 'Contact', href: '/contact' },
 ]
 
 export default function Navigation() {
@@ -33,7 +34,7 @@ export default function Navigation() {
             <div className="hidden lg:flex items-center space-x-8 xl:space-x-12 flex-1">
               {navItems.map((item, index) => {
                 return (
-                  <a key={item.name} href={item.href}>
+                  <Link key={item.name} href={item.href}>
                     <motion.div
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -43,7 +44,7 @@ export default function Navigation() {
                     >
                       {item.name}
                     </motion.div>
-                  </a>
+                  </Link>
                 )
               })}
             </div>
@@ -55,7 +56,7 @@ export default function Navigation() {
 
             {/* CTA Button */}
             <div className="hidden md:flex items-center">
-              <a href="#contact">
+              <Link href="/contact">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -70,7 +71,7 @@ export default function Navigation() {
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-[#25a5b3] to-[#2db8c7] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </motion.div>
-              </a>
+              </Link>
             </div>
 
           {/* Mobile menu button */}
@@ -98,7 +99,7 @@ export default function Navigation() {
               <div className="py-4 space-y-3 border-t border-gray-200/20">
                 {navItems.map((item, index) => {
                   return (
-                    <a key={item.name} href={item.href}>
+                    <Link key={item.name} href={item.href}>
                       <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -108,10 +109,10 @@ export default function Navigation() {
                       >
                         {item.name}
                       </motion.div>
-                    </a>
+                    </Link>
                   )
                 })}
-                <a href="#contact">
+                <Link href="/contact">
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -125,7 +126,7 @@ export default function Navigation() {
                     </svg>
                     Get Quote
                   </motion.div>
-                </a>
+                </Link>
               </div>
             </motion.div>
           )}

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Contact from '@/components/sections/Contact'
+import ContactInfo from '@/components/sections/ContactInfo'
 import Navigation from '@/components/layout/Navigation'
 import TopBar from '@/components/layout/TopBar'
 import Footer from '@/components/layout/Footer'
@@ -21,6 +22,7 @@ export default function ContactPage() {
         className="pt-8"
       >
         <Contact />
+        <ContactInfo />
       </motion.div>
       <Footer />
     </main>

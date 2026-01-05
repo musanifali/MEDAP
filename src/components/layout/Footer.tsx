@@ -1,51 +1,37 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import { ArrowRight, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, Award, Shield, Heart } from 'lucide-react'
 
 const footerSections = [
   {
-    title: "Products",
+    title: "Quick Links",
     links: [
-      { name: "Hospital Beds", href: "#" },
-      { name: "Patient Seating", href: "#" },
-      { name: "Medical Workstations", href: "#" },
-      { name: "Storage Solutions", href: "#" },
-      { name: "Waiting Room Furniture", href: "#" },
-      { name: "Bedside Tables", href: "#" }
+      { name: "Home", href: "/" },
+      { name: "About Us", href: "/about" },
+      { name: "Products", href: "/products" },
+      { name: "Certifications", href: "/certifications" },
+      { name: "Contact", href: "/contact" }
     ]
   },
   {
-    title: "Solutions",
+    title: "Our Products",
     links: [
-      { name: "ICU Solutions", href: "#" },
-      { name: "Emergency Department", href: "#" },
-      { name: "Patient Rooms", href: "#" },
-      { name: "Surgical Suites", href: "#" },
-      { name: "Rehabilitation Centers", href: "#" },
-      { name: "Long-term Care", href: "#" }
+      { name: "Electro Medical Equipment", href: "/products/electro-medical" },
+      { name: "Medical Gases", href: "/products" },
+      { name: "Hospital Furniture", href: "/products" },
+      { name: "CSSD Equipment", href: "/products" },
+      { name: "Surgical Instruments", href: "/products" }
     ]
   },
   {
     title: "Company",
     links: [
-      { name: "About Us", href: "#about" },
-      { name: "Our Story", href: "#" },
-      { name: "Careers", href: "#" },
-      { name: "Press & Media", href: "#" },
-      { name: "Sustainability", href: "#" },
-      { name: "Quality Assurance", href: "#" }
-    ]
-  },
-  {
-    title: "Support",
-    links: [
-      { name: "Contact Us", href: "#contact" },
-      { name: "Technical Support", href: "#" },
-      { name: "Installation Guide", href: "#" },
-      { name: "Warranty", href: "#" },
-      { name: "Maintenance", href: "#" },
-      { name: "Training", href: "#" }
+      { name: "CEO Message", href: "/ceo-message" },
+      { name: "Quality & Compliance", href: "/certifications" },
+      { name: "Our Clients", href: "/about" },
+      { name: "Get a Quote", href: "/contact" }
     ]
   }
 ]
@@ -58,10 +44,10 @@ const socialLinks = [
 ]
 
 const certifications = [
-  { name: "ISO 9001", description: "Quality Management" },
-  { name: "FDA Approved", description: "Medical Device Standards" },
-  { name: "CE Marking", description: "European Conformity" },
-  { name: "ISO 13485", description: "Medical Device Quality" }
+  { name: "Since 1990", description: "35+ Years of Excellence" },
+  { name: "Quality Management", description: "ISO Compliant Systems" },
+  { name: "Caring for Life", description: "Our Core Philosophy" },
+  { name: "Trusted Partner", description: "100+ Major Clients" }
 ]
 
 export default function Footer() {
@@ -78,11 +64,11 @@ export default function Footer() {
             className="max-w-4xl mx-auto text-center"
           >
             <h3 className="text-2xl lg:text-3xl font-bold mb-4">
-              Stay Updated with Healthcare Innovation
+              Stay Connected with MEDAP International
             </h3>
             <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
-              Subscribe to our newsletter for the latest updates on hospital furniture innovations, 
-              industry insights, and exclusive offers for healthcare professionals.
+              Subscribe to receive updates on new medical equipment, healthcare solutions, 
+              special offers, and industry insights from Pakistan's leading healthcare provider.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
@@ -94,7 +80,7 @@ export default function Footer() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-primary-500 to-primary-600 px-8 py-4 rounded-2xl font-semibold hover:shadow-lg hover:shadow-primary-500/25 transition-all duration-300 flex items-center justify-center space-x-2"
+                className="bg-gradient-to-r from-[#2db8c7] to-[#25a5b3] px-8 py-4 rounded-2xl font-semibold hover:shadow-lg hover:shadow-[#2db8c7]/25 transition-all duration-300 flex items-center justify-center space-x-2"
               >
                 <span>Subscribe</span>
                 <ArrowRight size={16} />
@@ -106,7 +92,7 @@ export default function Footer() {
 
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid lg:grid-cols-6 gap-12">
+        <div className="grid lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -116,30 +102,31 @@ export default function Footer() {
             className="lg:col-span-2"
           >
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-primary-600 rounded-xl flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-r from-[#2db8c7] to-[#25a5b3] rounded-xl flex items-center justify-center">
                 <Heart className="text-white" size={20} />
               </div>
               <span className="text-2xl font-bold">MEDAP International</span>
             </div>
             
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Leading provider of innovative hospital furniture solutions, dedicated to enhancing 
-              patient care and supporting healthcare professionals worldwide since 2010.
+              Pakistan's leading supplier and service provider of Electro Medical Equipment, Hospital Furniture, 
+              Surgical Instruments, and Medical Gases. Serving healthcare institutions with "Caring for Life" 
+              philosophy since 1990.
             </p>
             
             {/* Contact Info */}
             <div className="space-y-3 mb-6">
               <div className="flex items-center space-x-3">
-                <Phone size={16} className="text-primary-500" />
-                <span className="text-gray-300">+1 (555) 123-4567</span>
+                <Phone size={16} className="text-[#2db8c7]" />
+                <span className="text-gray-300">+92-42-36315179 / 36363339</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail size={16} className="text-primary-500" />
-                <span className="text-gray-300">info@medapinternational.com</span>
+                <Mail size={16} className="text-[#2db8c7]" />
+                <span className="text-gray-300">medap.international@gmail.com</span>
               </div>
               <div className="flex items-start space-x-3">
-                <MapPin size={16} className="text-primary-500 mt-1" />
-                <span className="text-gray-300">123 Healthcare Blvd<br />Medical District, NY 10001</span>
+                <MapPin size={16} className="text-[#2db8c7] mt-1" />
+                <span className="text-gray-300">17 G, Sharf Mansion, Near Ganga Ram Hospital<br />16 Shahrah e Fatima Jinnah, Lahore, Pakistan</span>
               </div>
             </div>
 
@@ -151,7 +138,7 @@ export default function Footer() {
                   href={social.href}
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.9 }}
-                  className="w-10 h-10 bg-gray-800 hover:bg-primary-500 rounded-2xl flex items-center justify-center transition-colors duration-300"
+                  className="w-10 h-10 bg-gray-800 hover:bg-[#2db8c7] rounded-2xl flex items-center justify-center transition-colors duration-300"
                 >
                   <social.icon size={18} />
                 </motion.a>
@@ -172,13 +159,14 @@ export default function Footer() {
               <ul className="space-y-3">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    <motion.a
-                      href={link.href}
-                      whileHover={{ x: 5 }}
-                      className="text-gray-400 hover:text-primary-400 transition-colors duration-200"
-                    >
-                      {link.name}
-                    </motion.a>
+                    <Link href={link.href}>
+                      <motion.span
+                        whileHover={{ x: 5 }}
+                        className="text-gray-400 hover:text-[#2db8c7] transition-colors duration-200 cursor-pointer inline-block"
+                      >
+                        {link.name}
+                      </motion.span>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -187,30 +175,7 @@ export default function Footer() {
         </div>
 
         {/* Certifications */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="mt-16 pt-8 border-t border-gray-800"
-        >
-          <h4 className="text-lg font-semibold mb-6 text-center">Certifications & Compliance</h4>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {certifications.map((cert, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ y: -2 }}
-                className="text-center p-4 bg-gray-800 rounded-2xl hover:bg-gray-750 transition-colors duration-300"
-              >
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mx-auto mb-3">
-                  <Award size={20} className="text-white" />
-                </div>
-                <div className="font-semibold text-sm mb-1">{cert.name}</div>
-                <div className="text-xs text-gray-400">{cert.description}</div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+        
       </div>
 
       {/* Bottom Bar */}
@@ -231,28 +196,28 @@ export default function Footer() {
               <motion.a
                 href="#"
                 whileHover={{ y: -1 }}
-                className="text-gray-400 hover:text-primary-400 transition-colors duration-200"
+                className="text-gray-400 hover:text-[#2db8c7] transition-colors duration-200"
               >
                 Privacy Policy
               </motion.a>
               <motion.a
                 href="#"
                 whileHover={{ y: -1 }}
-                className="text-gray-400 hover:text-primary-400 transition-colors duration-200"
+                className="text-gray-400 hover:text-[#2db8c7] transition-colors duration-200"
               >
                 Terms of Service
               </motion.a>
               <motion.a
                 href="#"
                 whileHover={{ y: -1 }}
-                className="text-gray-400 hover:text-primary-400 transition-colors duration-200"
+                className="text-gray-400 hover:text-[#2db8c7] transition-colors duration-200"
               >
                 Cookie Policy
               </motion.a>
               <motion.a
                 href="#"
                 whileHover={{ y: -1 }}
-                className="text-gray-400 hover:text-primary-400 transition-colors duration-200"
+                className="text-gray-400 hover:text-[#2db8c7] transition-colors duration-200"
               >
                 Accessibility
               </motion.a>
@@ -270,18 +235,18 @@ export default function Footer() {
         className="bg-gray-950 py-4"
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-center items-center space-x-8 text-xs text-gray-500">
+            <div className="flex justify-center items-center space-x-8 text-xs text-gray-500">
             <div className="flex items-center space-x-2">
               <Shield size={14} />
-              <span>Secure & Compliant</span>
+              <span>Quality Assured</span>
             </div>
             <div className="flex items-center space-x-2">
               <Award size={14} />
-              <span>Industry Leader</span>
+              <span>Trusted Since 1990</span>
             </div>
             <div className="flex items-center space-x-2">
               <Heart size={14} />
-              <span>Patient-First Design</span>
+              <span>Caring for Life</span>
             </div>
           </div>
         </div>

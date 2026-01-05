@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import { Shield, Zap, Award, Users, Heart, Stethoscope } from 'lucide-react'
 
 const features = [
@@ -128,15 +129,15 @@ export default function Features() {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <a
-            href="#products"
+          <Link
+            href="/products"
             className="inline-flex items-center gap-2 sm:gap-3 px-7 sm:px-9 md:px-10 py-3.5 sm:py-4 md:py-5 bg-[#2db8c7] hover:bg-[#25a5b3] text-white text-sm sm:text-base font-bold rounded-lg sm:rounded-xl shadow-2xl shadow-[#2db8c7]/30 hover:shadow-[#2db8c7]/50 transition-all duration-300 hover:-translate-y-1"
           >
             Explore Our Products
             <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>
